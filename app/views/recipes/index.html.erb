@@ -1,0 +1,9 @@
+<% @recipes.each do |recipe| %>
+	<h2><%= recipe.title %></h2>
+	<div><%= truncate(recipe.body,:length =>250 )%>
+	<!-- truncate ==> 35 limits it to 35 characters-->
+	</div>
+	<br>
+	<%= link_to "Read Recipe", recipe %>
+
+<% end %>

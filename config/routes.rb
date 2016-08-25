@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  	resources :marketlists
+
 	resources :recipes
 
 root'recipes#index'

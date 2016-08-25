@@ -2,8 +2,12 @@
 
 one:
   title: MyString
-  body: MyText
+  description: MyText
+  cooking_date: 2016-08-25
+  user_id: 1
 
 two:
   title: MyString
-  body: MyText
+  description: MyText
+  cooking_date: 2016-08-25
+  user_id: 1

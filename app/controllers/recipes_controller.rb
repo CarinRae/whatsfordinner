@@ -46,10 +46,8 @@ class RecipesController < ApplicationController
   		@recipe=Recipe.find(params[:id])
   	end
   		
-  	
-
   	def recipe_params
-  		params.required(:recipe).permit(:title,:body)
+  		params.require(:recipe).permit(:title,:description,:cooking_date)
   		#creates the attributes in the recipe 
   		#consider adding in date etc. here
   	end

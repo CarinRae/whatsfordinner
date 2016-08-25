@@ -1,2 +1,0 @@
-class Marketlist < ApplicationRecord
-end

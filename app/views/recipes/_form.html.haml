@@ -1,9 +1,15 @@
-<%= form_for @recipe do |f| %>
-	<%= f.label :title %> <br>
-	<%= f.text_field :title %><br>
-	<br>
-	<%= f.label :body %><br>
-	<%= f.text_area :body %><br>
-	<br>
-	<%= f.submit %>
-<% end %>
+= simple_form_for @recipe, html: { multipart: true } do |f|
+	- if @recipe.errors.any?
+	#errors
+		%p
+			= @recipe.errors.count
+			Prevented this recipe froms saving
+		%ul
+			- @recipe.errors.full_messages.each do |msg|
+				%li = msg
+	.panel-body
+		= f.input :title, input_html: {class: 'form-control' }
+		= f.input :descrition, input_html: {class: 'form-control' }
+		= f.input :cooking_date, input_html: {class: 'form-control' }
+			
+	= f.button :submit, class: "btn btn-primary"

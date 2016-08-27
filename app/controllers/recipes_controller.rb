@@ -50,7 +50,7 @@ class RecipesController < ApplicationController
   end
   		
   def recipe_params
-  	params.require(:recipe).permit(:title,:description,:cooking_date)
+  	params.require(:recipe).permit(:title,:description,:cooking_date, ingredients_attributes: [:id,:name,:amount,:_destroy],notes_attributes: [:id, :step, :_destroy])
   		#creates the attributes in the recipe 
   		#consider adding in date etc. here
   end

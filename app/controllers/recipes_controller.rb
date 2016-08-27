@@ -20,12 +20,26 @@ class RecipesController < ApplicationController
     end
   	#this deifines the create recipe function
   	#private method only defined in this file
+
   end
 
   def show 	
   end
 
   def edit	
+  end
+
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to @recipe
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to root_path, notice: "You deleted!"
   end
  
 

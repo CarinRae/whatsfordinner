@@ -1,8 +1,31 @@
-%h1= @recipe.title 
-%p= @recipe.description
-%p= @recipe.cooking_date
+.main_content
+	#recipe_top.row
+		.col-md-4
+			#recipe_info
+				%h1=@recipe.title
+				%p.description= @recipe.description
+				%p.Cooking_date= @recipe.cooking_date
 
-= link_to "Back", root_path, class: "btn btn-default"
+	.row
+		.col-md-6
+			#ingredients
+				%h2 Ingredients
+				%table{:style=> "border:2px; width:100%"}
+					%tbody
+						%tr
+							%td Ingredient
+							%td Amount
+						- @recipe.ingredients.each do |ingredient|
+							%tr
+								%td= ingredient.name
+								%td= ingredient.amount
 
-=link_to "Edit", edit_recipe_path, class: "btn btn-default"
-=link_to "Delete", recipe_path, method: :delete, data: {confirm:" You Sure?"}, class: "btn btn-default"
+				
+				
+
+	.row
+		.col-md-12
+
+			= link_to "Back", root_path, class: "btn btn-default"
+			=link_to "Edit", edit_recipe_path, class: "btn btn-default"
+			=link_to "Delete", recipe_path, method: :delete, data: {confirm:" You Sure?"}, class: "btn btn-default"

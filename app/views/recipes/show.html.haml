@@ -5,6 +5,9 @@
 				%h1=@recipe.title
 				%p.description= @recipe.description
 				%p.Cooking_date= @recipe.cooking_date
+				%p
+					Submitted by
+					= @recipe.user.email
 
 	.row
 		.col-md-6

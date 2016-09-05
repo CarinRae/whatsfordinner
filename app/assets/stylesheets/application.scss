@@ -16,7 +16,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body{background: rgb(230,240,249)}
+body {
+  	background: {
+        image: url(img2.jpg);
+        repeat: no-repeat;
+        size: 100%;
+    }
+}
 
 .main_content {
 	padding: 0 0 50px 0;
@@ -25,8 +31,7 @@ body{background: rgb(230,240,249)}
 .navbar{
 	.navbarbrand{
 		font-weight:bold;
-		font-size: 30 px;
-		
-	}
+		font-size: 120 px;
+		}
 }
 
